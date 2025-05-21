@@ -1,6 +1,8 @@
 name: "MDXLD Build Action"
 description: "Build and bundle MDXLD files into ES Modules"
 author: "MDXLD Team"
+icon: "box"
+color: "gray-dark"
 
 inputs:
   source:
