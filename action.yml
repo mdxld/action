@@ -26,6 +26,9 @@ inputs:
     description: "Node.js version to use"
     required: false
     default: "20.x"
+  github-token:
+    description: "GitHub token for TODO synchronization"
+    required: false
 
 runs:
   using: "composite"
@@ -51,5 +54,12 @@ runs:
         if [ -n "${{ inputs.config }}" ]; then
           CONFIG_ARG="--config ${{ inputs.config }}"
         fi
-        
+
         mdxld build --source ${{ inputs.source }} --output ${{ inputs.output }} $CONFIG_ARG $BUNDLE_ARG
+
+    - name: Sync TODO
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+      run: node "${{ github.action_path }}"/scripts/sync-todo.js
