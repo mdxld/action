@@ -1,3 +1,4 @@
 {
-  "name": "@mdxld/action"
+  "name": "@mdxld/action",
+  "type": "module"
 }

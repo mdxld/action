@@ -38,6 +38,7 @@ steps:
 | `config` | Path to config file | No | - |
 | `bundle` | Bundle with esbuild | No | `true` |
 | `node-version` | Node.js version to use | No | `20.x` |
+| `github-token` | GitHub token for TODO sync | No | - |
 
 ## Examples
 
